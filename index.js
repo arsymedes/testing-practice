@@ -35,4 +35,35 @@ const calculator = (() => {
   }
 })()
 
-export { capitalize, reverseString, calculator }
+function checkChar(char, num) {
+  let baseUnicode
+  let upperCaseUnicode = "A".charCodeAt()
+  let lowerCaseUnicode = "a".charCodeAt()
+  let charUnicode = char.charCodeAt()
+  if (upperCaseUnicode <= charUnicode && charUnicode < upperCaseUnicode + 26) {
+    baseUnicode = upperCaseUnicode
+  } else if (lowerCaseUnicode <= charUnicode && charUnicode < lowerCaseUnicode + 26) {
+    baseUnicode = lowerCaseUnicode
+  } else {
+    return char
+  }
+
+  let position = charUnicode - baseUnicode
+  let newPosition = (position + num) % 26
+  let newChar = String.fromCharCode(baseUnicode + newPosition)
+
+  return newChar
+}
+
+function caesarCipher(string) {
+  const num = 1
+  let stringArray = [...string]
+  let newArray = stringArray.reduce((total, char) => {
+    let newChar = checkChar(char, num)
+    return total.concat(newChar)
+  }, [])
+  let newString = newArray.join("")
+  return newString
+}
+
+export { capitalize, reverseString, calculator, caesarCipher }

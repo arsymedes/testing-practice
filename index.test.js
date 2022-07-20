@@ -1,4 +1,4 @@
-import { capitalize, reverseString, calculator } from "./index.js"
+import { capitalize, reverseString, calculator, caesarCipher } from "./index.js"
 
 test("capitalize: all lowercase", () => {
   expect(capitalize("momen multipol")).toBe("Momen multipol")
@@ -32,3 +32,14 @@ test("calculator: Divide 2 Number", () => {
   expect(calculator.divide(25, 5)).toBe(5)
 })
 
+test("caesarCipher: wrapping", () => {
+  expect(caesarCipher("abcdefghijklmnopqrstuvwxyz")).toBe("bcdefghijklmnopqrstuvwxyza")
+})
+
+test("caesarCipher: Case", () => {
+  expect(caesarCipher("Momen Multipol")).toBe("Npnfo Nvmujqpm")
+})
+
+test("caesarCipher: Punctuation", () => {
+  expect(caesarCipher(";.,'[]")).toBe(";.,'[]")
+})
