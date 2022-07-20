@@ -1,4 +1,4 @@
-import { capitalize, reverseString, calculator, caesarCipher } from "./index.js"
+import { capitalize, reverseString, calculator, caesarCipher, analyzeArray } from "./index.js"
 
 test("capitalize: all lowercase", () => {
   expect(capitalize("momen multipol")).toBe("Momen multipol")
@@ -42,4 +42,13 @@ test("caesarCipher: Case", () => {
 
 test("caesarCipher: Punctuation", () => {
   expect(caesarCipher(";.,'[]")).toBe(";.,'[]")
+})
+
+test("analyzeArray: basic test", () => {
+  expect(analyzeArray([1,8,3,4,2,6])).toStrictEqual({
+    average: 4,
+    min: 1,
+    max: 8,
+    length: 6
+  })
 })
