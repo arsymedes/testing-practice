@@ -1,0 +1,24 @@
+{
+  "name": "testing-practice",
+  "version": "1.0.0",
+  "description": "Unit Testing Practice using Jest",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "watch": "jest --watch *.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arsymedes/testing-practice.git"
+  },
+  "author": "Ahmad Arsy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arsymedes/testing-practice/issues"
+  },
+  "homepage": "https://github.com/arsymedes/testing-practice#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.18.9",
+    "jest": "^28.1.3"
+  }
+}
